@@ -1,0 +1,8 @@
+<div>
+    <div class="card float-right" style="width: 20%;" ng-repeat="item in MyData | limitTo: 5">
+        <img class="card-img-top" ng-src="{{item.image}}" alt="Card image cap" style="width: 228px;height: 287px">
+        <div class="card-body">
+            <p class="card-text">{{item.name}}</p>
+        </div>
+    </div>
+</div>

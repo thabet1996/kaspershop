@@ -1,0 +1,133 @@
+<my-header></my-header>
+<div class="content">
+    <div ng-controller="homeCtrl">
+        <img src="app/photos/bodyImge3.jpg"/>
+        <div class="center">
+            <h1>HELLO WELCOME TO CASPER SHOP</h1>
+            <div style="font-size: 25px;color: blue;font-weight: bold; white-space: nowrap;
+  height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis; ">We sell all kinds of clothing for all age groups
+                and all international products
+            </div>
+            <div class="button1" ui-sref="discount">DISCOUNT</div>
+        </div>
+
+        <!-- -----------------------END FIRST IMGE------------------------ -->
+
+        <div style="height: 400px">
+            <div class="float-left">
+                <h2 style="font-weight: bold;margin: 0 60px 15px 27px">
+                    <a ng-click="myFilter = {cat: ''}" style="cursor: pointer">TOP PRODUCTS</a>
+                </h2>
+            </div>
+            <header id="header">
+                <nav class="navbar navbar-expand-lg   static-top headerCat">
+                    <div class="container ">
+                        <div class="collapse navbar-collapse" id="navbarResponsive">
+                            <ul class="navbar-nav ml-auto" style="cursor: pointer">
+                                <li class="nav-item">
+                                    <a class="nav-item nav-link " ng-click="myFilter = {cat: 'men'}">Men</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-item nav-link" ng-click="myFilter = {cat: 'woman'}">Woman</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-item nav-link" ng-click="myFilter = {cat: 'children'}">Children</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-item nav-link " ng-click="myFilter = {cat: 'kids'}">Kids</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-item nav-link " ng-click="myFilter = {cat: 'shoies'}">Shoies</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-item nav-link " ng-click="myFilter = {cat: 'watches'}">Watches</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-item nav-link "
+                                       ng-click="myFilter = {cat: 'accessories'}">Accessories</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div class="contentSideBar ">
+                <div class="card float-right "
+                     style="width: 16%;padding-top:10px;height: 300px;text-align: center;margin: 0 4px"
+                     ng-repeat="item in MyData | filter : myFilter | limitTo : 6">
+                    <a href="#!/product/{{item.id}}/{{item.cat}}">
+                        <img class="card-img-top imgSliderM" ng-src="{{item.image}}" alt="Card image cap"
+                             style="height: 200px;width: 92%;">
+                        <div class="">
+                            <p class="float-left" style="margin: 6px;opacity: 0.7">{{item.name}}</p>
+                        </div>
+                    </a>
+                    <span class="float-right"
+                          style="margin: 3px;font-weight: bold;position: absolute;right: 0;bottom: 0;font-size: 13px">
+                    {{item.price | currency}}
+                </span>
+                    <span class="float-left positionLeftBottom" style="margin: 3px;color: chocolate;font-size: 13px">
+                   66 Sold
+                </span>
+
+                </div>
+            </div>
+        </div>
+        <!-- ----------------------- END TOP PRODUCTS ------------------------ -->
+        <div style="margin-bottom: 20px">
+            <div class="disProd">
+                <h2 style="font-weight: bold;display: block;">
+                    DISCOUNT
+                </h2>
+            </div>
+            <div class="contentSideBar ">
+                <div class="card float-left"
+                     style="width: 16%;padding-top:10px;height: 305px;text-align: center;margin: 0 4px;background-color:#F2F2F2"
+                     ng-repeat="item in MyData |  filter : {sell : ''} | limitTo : 6">
+                    <a href="#!/product/{{item.id}}/{{item.cat}}">
+                        <img class="card-img-top imgSliderM" ng-src="{{item.image}}" alt="Card image cap"
+                             style="height: 200px;width: 92%;">
+                        <div class="">
+                            <p class="float-left" style="margin: 6px;opacity: 0.7">{{item.name}}</p>
+                        </div>
+                    </a>
+                    <span class="float-right"
+                          style="margin: 3px;font-weight: bold;position: absolute;right: 0;bottom: 0;font-size: 12px">
+                    {{item.price | currency}}
+                </span>
+                    <span class="float-right" ng-show="item.sell !== null"
+                          style="margin: 3px;font-weight: bold;position: absolute;right: 0;bottom: 20px;text-decoration: line-through;opacity: 0.5;font-size: 12px">
+                    {{item.sell | currency}}
+                </span>
+                    <span class="float-left positionLeftBottom" style="margin: 3px;color: chocolate;font-size: 13px">
+                        ★ 5.0
+                </span>
+                </div>
+            </div>
+        </div>
+        <!-- ----------------------- END DISCOUNT ----------------------- -->
+        <div class="parentAll">
+            <div ng-repeat="item in MyData" class="card float-right contentAll">
+                <a href="#!/product/{{item.id}}/{{item.cat}}">
+                    <img class="card-img-top" ng-src="{{item.image}}" alt="Card image cap"
+                         style="width: 100%;height: 230px;box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);margin-bottom: 5px">
+                    <div class="">
+                        <span class="card-text"
+                              style="margin: 15px 3px;opacity: 0.7;font-weight: 700;">{{item.name}}</span>
+                    </div>
+                </a>
+                <span class="float-right "
+                      style="margin: 3px;font-weight: bold;position: absolute;right: 0;bottom: 0">
+                    {{item.price | currency}}
+                    </span>
+                <span class="float-left positionLeftBottom" style="margin: 3px;color: darkred">
+                        ★ 5.0
+                    </span>
+            </div>
+        </div>
+
+    </div>
+</div>
+<my-footer></my-footer>

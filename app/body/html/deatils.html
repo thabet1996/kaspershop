@@ -1,0 +1,94 @@
+<div class="header11">
+    <div id="brand"><a ui-sref="index">CasperShop</a></div>
+    <nav id="menu">
+        <ul class="links">
+            <li><a ui-sref="index">Home</a></li>
+            <li><a ui-sref="discount">Sell</a></li>
+            <li><a ui-sref="best">Best Products</a></li>
+            <li><a ui-sref="categories">Categories</a></li>
+            <li><a ui-sref="about">About Us</a></li>
+        </ul>
+        <a href="javascript:void(0)" class="trigger">
+            <img class="icon" src="http://image.flaticon.com/icons/svg/121/121077.svg" alt="Open menu">
+            <img class="icon hidden" src="http://image.flaticon.com/icons/svg/149/149701.svg" alt="Close menu">
+        </a>
+    </nav>
+    <div id="cart">
+        <a href="javascript:void(0)">
+            <img class="icon" src="http://image.flaticon.com/icons/svg/79/79785.svg" alt="Cart">
+            <span class="cart-item-count">4</span><!-- Limit display to 99 -->
+        </a>
+    </div>
+</div>
+<main>
+    <div class="section section-gray">
+        <div class="section-content">
+            <div class="product-details" ng-repeat="item in ProductDetails | filter: {id: thisAlbum}">
+                <ul class="product-images">
+                    <li class="preview"><img ng-src="{{item.image}}" class=""/></li>
+                    <!-- Don't show small pictures if there's only 1 -->
+                    <li>
+                        <a href="javascript:void(0)"><img ng-src="{{item.image}}" class=""/></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)"><img ng-src="{{item.image}}" class=""/></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)"><img ng-src="{{item.image}}" class=""/></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)"><img ng-src="{{item.image}}" class=""/></a>
+                    </li>
+                </ul>
+                <ul class="product-info">
+                    <li class="product-name">{{item.name}}</li>
+                    <li class="product-price"><span>$</span><span>{{item.price}}</span></li>
+                    <li class="product-attributes">
+                        <ul class="fields">
+                            <li>
+                                <div class="field-name">Color:</div>
+                                <label>
+                                    <input type="radio" name="color"> Gray
+                                </label>
+                                <label>
+                                    <input type="radio" name="color"> Black
+                                </label>
+                            </li>
+                            <li>
+                                <div class="field-name">Size:</div>
+                                <label>
+                                    <input type="radio" name="size"> Kids
+                                </label>
+                                <label>
+                                    <input type="radio" name="size"> Adults
+                                </label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="product-addtocart">
+                        <button>Add To Cart</button>
+                    </li>
+                    <li class="product-description">
+                        <p>{{item.desc}}</p>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title"><h2>More Products for You</h2></div>
+        <div class="section-content">
+            <ul class="product-list">
+                <li ng-repeat="item in ProductDetails | filter: {cat: catId} | limitTo : 4">
+                    <a href="#!/product/{{item.id}}/{{item.cat}}" class="product">
+                        <div class="product-image"><img ng-src="{{item.image}}" style="height: 200px"/></div>
+                        <div class="product-name">{{item.name }}</div>
+                        <div class="product-price"><span>$</span><span>{{item.price}}</span></div>
+                    </a>
+                </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+</main>
+<my-footer></my-footer>
