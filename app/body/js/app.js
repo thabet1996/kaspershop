@@ -1,5 +1,5 @@
 var casperApp = angular.module("casperApp", ['ui.router']);
-casperApp.config(function ($stateProvider, $urlRouterProvider) {
+casperApp.config(function ($stateProvider, $urlRouterProvider,$locationProvider) {
     $urlRouterProvider.otherwise("/");
     $stateProvider
         .state('index', {
@@ -72,6 +72,9 @@ casperApp.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'app/body/html/categories.html',
             controller: "homeCtrl",
 
-        })
-
+        });
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+    });
 });
