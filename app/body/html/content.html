@@ -57,7 +57,7 @@
                 <div class="card float-right "
                      style="width: 16%;padding-top:10px;height: 300px;text-align: center;margin: 0 4px"
                      ng-repeat="item in MyData | filter : myFilter | limitTo : 6">
-                    <a href="#!/product/{{item.id}}/{{item.cat}}">
+                    <a ng-href="product/{{item.id}}/{{item.cat}}">
                         <img class="card-img-top imgSliderM" ng-src="{{item.image}}" alt="Card image cap"
                              style="height: 200px;width: 92%;">
                         <div class="">
@@ -86,7 +86,7 @@
                 <div class="card float-left"
                      style="width: 16%;padding-top:10px;height: 305px;text-align: center;margin: 0 4px;background-color:#F2F2F2"
                      ng-repeat="item in MyData |  filter : {sell : ''} | limitTo : 6">
-                    <a href="#!/product/{{item.id}}/{{item.cat}}">
+                    <a href="product/{{item.id}}/{{item.cat}}">
                         <img class="card-img-top imgSliderM" ng-src="{{item.image}}" alt="Card image cap"
                              style="height: 200px;width: 92%;">
                         <div class="">
@@ -110,7 +110,7 @@
         <!-- ----------------------- END DISCOUNT ----------------------- -->
         <div class="parentAll">
             <div ng-repeat="item in MyData" class="card float-right contentAll">
-                <a href="#!/product/{{item.id}}/{{item.cat}}">
+                <a href="product/{{item.id}}/{{item.cat}}">
                     <img class="card-img-top" ng-src="{{item.image}}" alt="Card image cap"
                          style="width: 100%;height: 230px;box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);margin-bottom: 5px">
                     <div class="">
