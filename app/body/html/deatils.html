@@ -80,7 +80,7 @@
         <div class="section-content">
             <ul class="product-list">
                 <li ng-repeat="item in ProductDetails | filter: {cat: catId} | limitTo : 4">
-                    <a href="#!/product/{{item.id}}/{{item.cat}}" class="product">
+                    <a href="product/{{item.id}}/{{item.cat}}" class="product">
                         <div class="product-image"><img ng-src="{{item.image}}" style="height: 200px"/></div>
                         <div class="product-name">{{item.name }}</div>
                         <div class="product-price"><span>$</span><span>{{item.price}}</span></div>
