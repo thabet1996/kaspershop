@@ -33,7 +33,7 @@
 </header>
 <div class="parentAll" style="margin-top: 20px">
     <div ng-repeat="item in MyData | filter : {best: true} | filter : myFilter" class="card float-right contentAll">
-        <a href="#!/product/{{item.id}}/{{item.cat}}">
+        <a href="product/{{item.id}}/{{item.cat}}">
             <img class="card-img-top" ng-src="{{item.image}}" alt="Card image cap"
                  style="width: 100%;height: 230px;box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);margin-bottom: 5px">
             <div class="">
