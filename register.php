@@ -1,42 +1,70 @@
-<?php include('server.php') ?>
-<!DOCTYPE html>
-<html>
+<?php
 
-<head>
-	<title>Registration system PHP and MySQL</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
+//register.php
 
-<body>
-	<div class="header">
-		<h2>Register</h2>
-	</div>
+include('database_connection.php');
 
-	<form method="post" action="register.php">
-		<?php include('errors.php'); ?>
-		<div class="input-group">
-			<label>Username</label>
-			<input type="text" name="username" value="<?php echo $username; ?>">
-		</div>
-		<div class="input-group">
-			<label>Email</label>
-			<input type="email" name="email" value="<?php echo $email; ?>">
-		</div>
-		<div class="input-group">
-			<label>Password</label>
-			<input type="password" name="password_1">
-		</div>
-		<div class="input-group">
-			<label>Confirm password</label>
-			<input type="password" name="password_2">
-		</div>
-		<div class="input-group">
-			<button type="submit" class="btn" name="reg_user">Register</button>
-		</div>
-		<p>
-			Already a member? <a href="login.php">Sign in</a>
-		</p>
-	</form>
-</body>
+$form_data = json_decode(file_get_contents("php://input"));
 
-</html>
+$message = '';
+$validation_error = '';
+
+if(empty($form_data->name))
+{
+ $error[] = 'Name is Required';
+}
+else
+{
+ $data[':name'] = $form_data->name;
+}
+
+if(empty($form_data->email))
+{
+ $error[] = 'Email is Required';
+}
+else
+{
+ if(!filter_var($form_data->email, FILTER_VALIDATE_EMAIL))
+ {
+  $error[] = 'Invalid Email Format';
+ }
+ else
+ {
+  $data[':email'] = $form_data->email;
+ }
+}
+
+if(empty($form_data->password))
+{
+ $error[] = 'Password is Required';
+}
+else
+{
+ $data[':password'] = password_hash($form_data->password, PASSWORD_DEFAULT);
+}
+
+if(empty($error))
+{
+ $query = "
+ INSERT INTO register (name, email, password) VALUES (:name, :email, :password)
+ ";
+ $statement = $connect->prepare($query);
+ if($statement->execute($data))
+ {
+  $message = 'Registration Completed';
+ }
+}
+else
+{
+ $validation_error = implode(", ", $error);
+}
+
+$output = array(
+ 'error'  => $validation_error,
+ 'message' => $message
+);
+
+echo json_encode($output);
+
+
+?>

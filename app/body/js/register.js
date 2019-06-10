@@ -1,102 +1,60 @@
-casperApp.service("ContactService" , function(){
-    var uid = 1;
-    var contacts = [{
-        'id' : 0,
-        'name' : 'Steve John',
-        'email' : 'john@gmail.com',
-        'password': 'John123',
-        'phone' : '911-91-199-999'}];
-
-    // Save Service for sving new contact and saving existing edited contact.
-    this.save = function(contact)
-    {
-        if(contact.id == null)
-        {
-            contact.id = uid++;
-            contacts.push(contact);
-        }
-        else
-        {
-            for(var i in contacts)
-            {
-                if(contacts[i].id == contact.id)
-                {
-                    contacts[i] = contact;
-                }
-            }
-        }
+casperApp.controller('registerCtrl', function($scope, $http){
+    $scope.closeMsg = function(){
+     $scope.alertMsg = false;
     };
-
-    // serach for a contact
-
-    this.get = function(id)
-    {
-        for(var i in contacts )
-        {
-            if( contacts[i].id == id)
-            {
-                return contacts[i];
-            }
-        }
+   
+    $scope.login_form = true;
+   
+    $scope.showRegister = function(){
+     $scope.login_form = false;
+     $scope.register_form = true;
+     $scope.alertMsg = false;
     };
-
-    //Delete a contact
-    this.delete = function(id)
-    {
-        for(var i in contacts)
-        {
-            if(contacts[i].id == id)
-            {
-                contacts.splice(i,1);
-            }
-        }
+   
+    $scope.showLogin = function(){
+     $scope.register_form = false;
+     $scope.login_form = true;
+     $scope.alertMsg = false;
     };
-    //Show all contacts
-    this.list = function()
-    {
-        return contacts;
-    } ;
-});
-
-////Controller area .....
-
-casperApp.controller("ContactController" , function($scope , ContactService){
-    console.clear();
-
-    $scope.ifSearchUser = false;
-    $scope.title ="List of Users";
-
-    $scope.contacts = ContactService.list();
-
-    $scope.saveContact = function()
-    {
-        console.log($scope.newcontact);
-        if($scope.newcontact == null || $scope.newcontact == angular.undefined)
-            return;
-        ContactService.save($scope.newcontact);
-        $scope.newcontact = {};
+   
+    $scope.submitRegister = function(){
+     $http({
+      method:"POST",
+      url:"register.php",
+      data:$scope.registerData
+     }).success(function(data){
+      $scope.alertMsg = true;
+      if(data.error != '')
+      {
+       $scope.alertClass = 'alert-danger';
+       $scope.alertMessage = data.error;
+      }
+      else
+      {
+       $scope.alertClass = 'alert-success';
+       $scope.alertMessage = data.message;
+       $scope.registerData = {};
+      }
+     });
     };
-    $scope.delete = function(id)
-    {
-        ContactService.delete(id);
-        if($scope.newcontact != angular.undefined && $scope.newcontact.id == id)
-        {
-            $scope.newcontact = {};
-        }
+   
+    $scope.submitLogin = function(){
+     $http({
+      method:"POST",
+      url:"login.php",
+      data:$scope.loginData
+     }).success(function(data){
+      if(data.error != '')
+      {
+       $scope.alertMsg = true;
+       $scope.alertClass = 'alert-danger';
+       $scope.alertMessage = data.error;
+      }
+      else
+      {
+       location.reload();
+      }
+     });
     };
-    $scope.edit = function(id)
-    {
-        $scope.newcontact = angular.copy(ContactService.get(id));
-    };
-    $scope.searchUser = function(){
-        if($scope.title == "List of Users"){
-            $scope.ifSearchUser=true;
-            $scope.title = "Back";
-        }
-        else
-        {
-            $scope.ifSearchUser = false;
-            $scope.title = "List of Users";
-        }
-    };
-});
+   
+   });

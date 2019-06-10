@@ -58,14 +58,10 @@ casperApp.config(function ($stateProvider, $urlRouterProvider,$locationProvider)
             url: "/contact",
             templateUrl: 'app/body/html/contact.html',
         })
-        .state('loginReg', {
-            url: '/loginReg',
-            templateUrl: 'app/body/html/loginReg.html',
-        })
         .state('register', {
             url: "/register",
-            templateUrl: 'app/body/html/register.html',
-            controller : 'ContactController'
+            templateUrl: 'registerPage.php',
+            controller : 'registerCtrl'
         })
         .state('categories', {
             url: "/categories",
