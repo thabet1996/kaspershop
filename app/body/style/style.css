@@ -64,10 +64,6 @@ ul{
     text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em darkblue;
     text-align: center;
 }
-.content p{
-    /*font-size: 18px;*/
-    /*text-shadow: 1px 1px 2px black, 0 0 1em chocolate, 0 0 0.2em darkcyan;*/
-}
 .content .button1{
     border: 1px solid black;
     padding: 40px 35px;
@@ -176,12 +172,11 @@ ul{
     bottom: 0;
 }
 .headerCat{
-    width: 51%;
+    width: 40%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 25px;
     font-weight: bold;
     margin: 25px auto;
-    font-size:2vw;
 }
 .childCat{
     padding-right: 0.5rem;
@@ -274,6 +269,46 @@ ng-message {
 .forTest h2{
     font-size:2vw;
  }
+ .dropbtn {
+    background-color: burlywood;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin: 15px 10px;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  }
   @media screen and (max-width: 360px) {
       body{
           font-weight: bold;

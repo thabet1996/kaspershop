@@ -3,8 +3,8 @@
     <div ng-controller="homeCtrl">
         <img src="app/photos/bodyImge3.jpg"/>
         <div class="center">
-            <h1>HELLO WELCOME TO CASPER SHOP</h1>
-            <div class="textDemo">We sell all kinds of clothing for all age groups
+            <h1 class="font-size:2vw">HELLO WELCOME TO CASPER SHOP</h1>
+            <div c>We sell all kinds of clothing for all age groups
                 and all international products
             </div>
             <div class="button1" ui-sref="discount">DISCOUNT</div>
@@ -54,8 +54,8 @@
             }
             </style>
         <div >
-            <div style="width: 100%;height: 100px;" class="forTest">
-                    <h2 style="font-weight: bold;cursor: pointer; width: 20%;padding: 30px 6px;float: left;"> 
+            <div style="width: 100%;height: 100px;">
+                    <h2 style="font-weight: bold;cursor: pointer; width: 20%;padding: 30px 6px;float: left;font-size:2vw"> 
                         <a ng-click="myFilter = {cat: ''}">TOP PRODUCTS</a>
                     </h2>
                     <div class="dropdown">
@@ -101,7 +101,8 @@
                 </h2>
             </div>
             <div class="contentSideBar ">
-                <div class="card float-left discountStyle"
+                <div class="card float-left"
+                     style="width: 16%;padding-top:10px;height: 305px;text-align: center;margin: 0 4px;background-color:#F2F2F2"
                      ng-repeat="item in MyData |  filter : {sell : ''} | limitTo : 6">
                     <a href="product/{{item.id}}/{{item.cat}}">
                         <img class="card-img-top imgSliderM" ng-src="{{item.image}}" alt="Card image cap"
