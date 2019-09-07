@@ -53,6 +53,10 @@ ul{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.content{
+    overflow-y: auto;
+  overflow-x: hidden;
+}
 .content h1{
     color: white;
     font-size: 50px;
@@ -160,6 +164,8 @@ ul{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 5px;
+    width: 100%;
+    height: auto;
 }
 .nameProdC{
     margin: 3px
@@ -170,15 +176,24 @@ ul{
     bottom: 0;
 }
 .headerCat{
-    width: 39%;
+    width: 51%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 25px;
     font-weight: bold;
-    padding: 10px;
-    margin: 30px 20px 20px 20px;
+    margin: 25px auto;
+    font-size:2vw;
 }
-.headerCat a{
-    padding: 5px;
+.childCat{
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+.cardProducts{
+    width: 16%;
+    padding-top:10px;
+    height: 300px;
+    text-align: center;
+    margin: 0 4px;
+    transition: 0.3s;
 }
 .disProd{
     width: 100%;
@@ -240,3 +255,140 @@ ng-message {
     padding-bottom: 10px;
     color: red;
 }
+.textDemo{
+    color: blue;
+    font-weight: bold;
+    white-space: nowrap;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.discountStyle{
+    width: 16%;
+    padding-top:10px;
+    height: 305px;
+    text-align: center;
+    margin: 0 4px;
+    background-color:#F2F2F2
+}
+.forTest h2{
+    font-size:2vw;
+ }
+  @media screen and (max-width: 360px) {
+      body{
+          font-weight: bold;
+          font-size: 18px;
+          
+      }
+    .content img{
+        width: 100%;
+        height: 500px;
+        }
+        .content h1{
+            width: 60%;
+            font-size: 35px;
+            margin: 0 auto
+        }
+        .textDemo{
+            height: 40px;
+            width: 60%;
+            margin: 0 auto;
+            text-overflow: unset;
+
+        }
+        .discountStyle{
+            width: 100%;
+            margin: 4px 0;
+                }
+        .cardProducts{
+            width: 100%;
+            margin: 4px 0;
+
+        }
+        .contentAll{
+            width: 100%;
+        }
+        footer img{
+            width: 16%;
+            height: 100px;
+        }
+        .forTest h2{
+            font-size: 15px;
+            margin-right: 20px;
+         }
+  } 
+  @media screen and (max-width: 411px) {
+    .content h1{
+        width: 60%;
+        font-size: 35px;
+        margin: 0 auto;
+    }
+    .textDemo{
+        font-weight: bold;
+        height: 40px;
+        width: 60%;
+        margin: 0 auto;
+        text-overflow: unset;
+
+    }
+    .content img{
+        width: 100%;
+        height: 500px;
+        }
+    .discountStyle{
+        width: 100%;
+        margin: 4px 0;
+            }
+    .cardProducts{
+        width: 100%;
+        margin: 4px 0;
+
+    }
+    .contentAll{
+        width: 100%;
+    }
+    footer img{
+        width: 16%;
+        height: 100px;
+    }
+    .center{
+        top: 30%;
+        left: 50%;
+    }
+} 
+
+@media screen and (max-width: 768px) {
+    .cardProducts{
+        width: 32%;
+    }
+    .discountStyle{
+        width: 32%;
+    }
+    .contentAll{
+        width: 32%;
+    }
+    footer img{
+        width: 100%;
+        height: 100px;
+    }
+} 
+@media screen and (max-width: 1024px) {
+    .cardProducts{
+        width: 32%;
+    }
+    .discountStyle{
+        width: 32%;
+    }
+    .contentAll{
+        width: 32%;
+    }
+    footer img{
+        width: 100%;
+        height: 100px;
+    }
+} 
+@media screen and (max-width: 1215px) {
+    .discountStyle{
+        width: 15%;
+    }
+} 
