@@ -44,7 +44,7 @@ ul{
 }
 .content img{
     width: 100%;
-    height: 100vh;
+    min-height: 100%;
     position: relative;
 }
 .center{
@@ -71,7 +71,7 @@ ul{
     font-size: 20px;
     border-radius: 15px;
     position: absolute;
-    top: 150%;
+    top: 300px;
     left: 50%;
     transform: translate(-50%, -50%);
     color: crimson;
@@ -93,7 +93,14 @@ ul{
     width: 100%;
     height: 310px;
     position: relative;
-
+}
+.contentSideBar .card{
+    width: 16%;
+    padding-top:10px;
+    height: 305px;
+    text-align: center;
+    margin: 0 4px;
+    background-color:#F2F2F2;
 }
 .contentAll{
     width: 19%;
@@ -258,14 +265,6 @@ ng-message {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.discountStyle{
-    width: 16%;
-    padding-top:10px;
-    height: 305px;
-    text-align: center;
-    margin: 0 4px;
-    background-color:#F2F2F2
-}
 .forTest h2{
     font-size:2vw;
  }
@@ -309,121 +308,9 @@ ng-message {
   .dropdown:hover .dropbtn {
     background-color: #3e8e41;
   }
-  @media screen and (max-width: 360px) {
-      body{
-          font-weight: bold;
-          font-size: 18px;
-          
-      }
-    .content img{
-        width: 100%;
-        height: 500px;
-        }
-        .content h1{
-            width: 60%;
-            font-size: 35px;
-            margin: 0 auto
-        }
-        .textDemo{
-            height: 40px;
-            width: 60%;
-            margin: 0 auto;
-            text-overflow: unset;
-
-        }
-        .discountStyle{
-            width: 100%;
-            margin: 4px 0;
-                }
-        .cardProducts{
-            width: 100%;
-            margin: 4px 0;
-
-        }
-        .contentAll{
-            width: 100%;
-        }
-        footer img{
-            width: 16%;
-            height: 100px;
-        }
-        .forTest h2{
-            font-size: 15px;
-            margin-right: 20px;
-         }
-  } 
-  @media screen and (max-width: 411px) {
-    .content h1{
-        width: 60%;
-        font-size: 35px;
-        margin: 0 auto;
-    }
-    .textDemo{
-        font-weight: bold;
-        height: 40px;
-        width: 60%;
-        margin: 0 auto;
-        text-overflow: unset;
-
-    }
-    .content img{
-        width: 100%;
-        height: 500px;
-        }
-    .discountStyle{
-        width: 100%;
-        margin: 4px 0;
-            }
-    .cardProducts{
-        width: 100%;
-        margin: 4px 0;
-
-    }
-    .contentAll{
-        width: 100%;
-    }
-    footer img{
-        width: 16%;
-        height: 100px;
-    }
-    .center{
-        top: 30%;
-        left: 50%;
-    }
-} 
-
-@media screen and (max-width: 768px) {
-    .cardProducts{
-        width: 32%;
-    }
-    .discountStyle{
-        width: 32%;
-    }
-    .contentAll{
-        width: 32%;
-    }
-    footer img{
-        width: 100%;
-        height: 100px;
-    }
-} 
-@media screen and (max-width: 1024px) {
-    .cardProducts{
-        width: 32%;
-    }
-    .discountStyle{
-        width: 32%;
-    }
-    .contentAll{
-        width: 32%;
-    }
-    footer img{
-        width: 100%;
-        height: 100px;
-    }
-} 
-@media screen and (max-width: 1215px) {
-    .discountStyle{
-        width: 15%;
-    }
-} 
+.contentText{
+    font-size: 25px;
+    font-weight: bold;
+    color: aqua;
+    text-align: center
+}

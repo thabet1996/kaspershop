@@ -4,7 +4,7 @@ casperApp.factory('ergastAPIservice', function($http) {
     ergastAPI.getProductDetails = function() {
         return $http({
             method: 'GET',
-            url: 'products.json'
+            url: 'static/products.json'
         });
     };
     return ergastAPI;

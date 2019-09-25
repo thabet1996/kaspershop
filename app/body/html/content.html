@@ -1,10 +1,10 @@
 <my-header></my-header>
 <div class="content">
     <div ng-controller="homeCtrl">
-        <img src="app/photos/bodyImge3.jpg"/>
+        <img src="static/app/photos/bodyImge3.jpg"/>
         <div class="center">
-            <h1 class="font-size:2vw">HELLO WELCOME TO CASPER SHOP</h1>
-            <div c>We sell all kinds of clothing for all age groups
+            <h1 class="">HELLO WELCOME TO CASPER SHOP</h1>
+            <div class="contentText">We sell all kinds of clothing for all age groups
                 and all international products
             </div>
             <div class="button1" ui-sref="discount">DISCOUNT</div>
@@ -101,8 +101,7 @@
                 </h2>
             </div>
             <div class="contentSideBar ">
-                <div class="card float-left"
-                     style="width: 16%;padding-top:10px;height: 305px;text-align: center;margin: 0 4px;background-color:#F2F2F2"
+                <div class="card float-left cardProducts"
                      ng-repeat="item in MyData |  filter : {sell : ''} | limitTo : 6">
                     <a href="product/{{item.id}}/{{item.cat}}">
                         <img class="card-img-top imgSliderM" ng-src="{{item.image}}" alt="Card image cap"

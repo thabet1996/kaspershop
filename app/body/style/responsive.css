@@ -1,0 +1,102 @@
+  @media only screen and (max-width: 414px) {
+    body{
+        font-weight: bold;
+        font-size: 18px;
+        width: 100%;
+    }
+    .contentText{
+        visibility: hidden;
+    }
+    .dropbtn{
+        width: 80%;
+    }
+  .content img{
+      width: 100%;
+      height: 500px;
+      }
+      .content h1{
+          width: 100%;
+          font-size: 37px;
+      }
+      .textDemo{
+          height: 40px;
+          width: 60%;
+          margin: 0 auto;
+          text-overflow: unset;
+
+      }
+      .contentSideBar .card{
+          width: 98%;
+      }
+      .cardProducts{
+          width: 100%;
+          margin: 4px 0;
+
+      }
+      .contentAll{
+          width: 100%;
+      }
+      footer img{
+          width: 20%;
+          height: 100px;
+      }
+      .forTest h2{
+          font-size: 15px;
+          margin-right: 20px;
+       }
+       .content .button1{
+           font-size: 36px;
+           padding: 30px 35px;
+       }
+} 
+
+/* @media only screen and (max-width: 600px ) {
+    body{
+        font-weight: bold;
+        font-size: 18px;
+
+    }
+    .contentText{
+        visibility: hidden;
+    }
+    .dropbtn{
+        width: 80%;
+    }
+  .content img{
+      width: 100%;
+      height: 500px;
+      }
+      .content h1{
+          width: 100%;
+          font-size: 48px;
+      }
+      .textDemo{
+          height: 40px;
+          width: 60%;
+          margin: 0 auto;
+          text-overflow: unset;
+
+      }
+      .contentSideBar .card{
+          width: 48%;
+      }
+      .cardProducts{
+          width: 48%;
+          margin: 4px 0;
+
+      }
+      .contentAll{
+          width: 32%;
+      }
+      footer img{
+          width: 96%;
+          height: 100px;
+      }
+      .forTest h2{
+          font-size: 15px;
+          margin-right: 20px;
+       }
+       .content .button1{
+           font-size: 36px;
+       }
+}  */
