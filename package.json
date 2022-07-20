@@ -4,7 +4,7 @@
   "description": "hi this website for testing",
   "main": "index.js",
   "dependencies": {
-    "angular": "^1.6.10",
+    "angular": "^1.8.3",
     "angular-messages": "^1.7.8",
     "angular-ui-router": "^1.0.22",
     "bootstrap": "^4.3.1",
